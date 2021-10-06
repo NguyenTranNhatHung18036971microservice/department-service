@@ -3,6 +3,7 @@ package khoa.service.controller;
 import khoa.service.entity.Khoa;
 import khoa.service.service.KhoaService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -12,6 +13,14 @@ import java.util.List;
 public class KhoaController {
     @Autowired
     private KhoaService khoaService;
+    
+//    @Value("${welcome}")
+//    String bb;
+//
+//    @GetMapping("/")
+//    public String helloWorld(){
+//        return bb;
+//    }
 
     @PostMapping("/save")
     public Khoa saveKhoa(@RequestBody Khoa khoa){
