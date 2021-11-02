@@ -3,6 +3,7 @@ package khoa.service.controller;
 import khoa.service.entity.Khoa;
 import khoa.service.service.KhoaService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.cache.annotation.Cacheable;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -22,6 +23,7 @@ public class KhoaController {
         return khoaService.getAllKhoa();
     }
     @GetMapping("/{id}")
+    @Cacheable("department")
     public Khoa findKhoaById(@PathVariable("id") Long id){
         return khoaService.getKhoaById(id);
     }
